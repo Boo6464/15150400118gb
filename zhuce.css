@@ -5,13 +5,6 @@ body{
     height:100%;
 }
 .d1{
-    text-align:center;
-    line-height: center;
-    font-size: 2vw;
-    background-color: rgba(255,255,255,0.5);
-     width: 50%;
-    height:40%;
-    color: black;
     position: absolute;
             top: 50%;
             left: 50%;
