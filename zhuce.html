@@ -1,35 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
-    <style type="text/css">
-        .content
-        {
-            width: 400px;
-            height: auto;
-            margin: 0 auto;
-            border: 1px solid #CCC;
-            text-align: center;
-        }
-        .content ul
-        {
-            list-style: none;
-            padding: 0;
-        }
-        .content ul li
-        {
-            line-height: 40px;
-        }
-        span
-        {
-            font-weight: bold;
-            color: Red;
-            font-size: 12px;
-        }
-        
-    </style>
-    
+    <link rel="stylesheet" href="zhuce.css" type="text/css">
 </head>
-<body onload="myFocus();" style="background-image: url(500500231.jpg);background-size:cover; width:100%;height:100%;">
+<body onload="myFocus();" style="background-image: url(1111.png);background-size:cover; width:100%;height:100%;">
+<div align="center"><img src="1515245648_354132.png" ></div>
 <script>
         //刚加载页面的时候焦点移到用户名文本框内
         function myFocus() {
@@ -105,7 +82,7 @@
             }
         }
     </script>
-<div class="content">
+<div class="d1">
     <ul>
         <li>注册</li>
         <li>用户名：<input id="yonghuming" name="username" type="text" size="18" onblur="blurName(this.value);" />
@@ -116,7 +93,11 @@
             <span id="checkOk"></span></li>
         <li>
             <input id="Button1" type="button" value="注册" onclick="validateRegister()" />
-            <input id="Button2" type="button" value="登录" onclick="javascript:window.location.href(denglu.html)" /></li>
+            <a href="denglu.html"><input id="Button2" type="button" value="登录"  /></a>
+            </li>
     </ul>
 </div>
+<div class="d3">
+    <br>欢迎使用图书管理系统
+  </div>
 </body>
