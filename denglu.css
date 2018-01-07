@@ -1,0 +1,24 @@
+.d1{background-color: #291f1d;
+           border-radius:10% 10% 10% 10%;
+           width: 5%;height:10%;
+           color: aliceblue;
+           text-decoration: none;
+        }
+.d2{
+    text-align:center;
+    font-size: 1.3vw;
+    background-color: #201f1d;
+    width:30%;
+    height:60%;
+    background-position: center;
+    margin: 2% 30%;
+    color: aliceblue;
+}
+.d3{
+    text-align: center;
+    width: 100%;
+    height:10%;
+    background-color: #291f1d;
+    position:absolute;top: 90%;
+    color: aliceblue;
+}

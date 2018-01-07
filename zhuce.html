@@ -1,0 +1,122 @@
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style type="text/css">
+        .content
+        {
+            width: 400px;
+            height: auto;
+            margin: 0 auto;
+            border: 1px solid #CCC;
+            text-align: center;
+        }
+        .content ul
+        {
+            list-style: none;
+            padding: 0;
+        }
+        .content ul li
+        {
+            line-height: 40px;
+        }
+        span
+        {
+            font-weight: bold;
+            color: Red;
+            font-size: 12px;
+        }
+        
+    </style>
+    
+</head>
+<body onload="myFocus();" style="background-image: url(500500231.jpg);background-size:cover; width:100%;height:100%;">
+<script>
+        //刚加载页面的时候焦点移到用户名文本框内
+        function myFocus() {
+            document.getElementById("yonghuming").focus();
+        }
+        //设置cookie
+        function setCookie(str, strValue) {
+            var exp = new Date();
+            
+            document.cookie = str + "=" + strValue + ";expires=" + exp.toGMTString();
+        }
+        //验证用户名和密码
+        function validateRegister() {
+            var username = document.getElementById("yonghuming").value;
+            var password = document.getElementById("mima").value;
+            var pwdOk = document.getElementById("pwdOk").value;
+            if (blurName(username) && blurPwd(password) && blurPwdOk(pwdOk)) {
+                setCookie("username", username);
+                setCookie("password", password);
+                location.href = "Login.htm"; //接收页面
+            }
+        }
+
+        //焦点移走用户名框
+        function blurName(name) {
+            if (name == null || name == "") {
+                checkName.innerHTML = "用户名不能为空";
+                return false;
+            }else {
+                checkName.innerHTML = "用户名可用";
+                return true;
+            }
+        }
+        //焦点移走密码框
+        function blurPwd(password) {
+            if (password == null || password == "") {
+                checkPwd.innerHTML = "密码不能为空";
+                return false;
+            }else {
+                if (pwdValidate() == -1) {
+                    ruo.style.backgroundColor = "red";
+                    zhong.style.backgroundColor = "#CCC";
+                    qiang.style.backgroundColor = "#CCC";
+                }
+                else if (pwdValidate() == 0) {
+                    ruo.style.backgroundColor = "#CCC";
+                    zhong.style.backgroundColor = "red";
+                    qiang.style.backgroundColor = "#CCC";
+                }
+                else if (pwdValidate() == 1) {
+                    ruo.style.backgroundColor = "#CCC";
+                    zhong.style.backgroundColor = "#CCC";
+                    qiang.style.backgroundColor = "red";
+                }
+                checkPwd.innerHTML = "密码可用";
+                return true;
+            }
+        }
+        //焦点移走确认密码框
+        function blurPwdOk(pwdOk) {
+            var password = document.getElementById("txtPassword").value;
+            if (pwdOk == null || pwdOk == "") {
+                checkOk.innerHTML = "确认密码输入不能为空";
+                return false;
+            }
+            else if (password != pwdOk) {
+                checkOk.innerHTML = "两次输入的密码不一致";
+                return false;
+            }
+            else {
+                checkOk.innerHTML = "输入正确";
+                return true;
+            }
+        }
+    </script>
+<div class="content">
+    <ul>
+        <li>注册</li>
+        <li>用户名：<input id="yonghuming" name="username" type="text" size="18" onblur="blurName(this.value);" />
+            <span id="checkName"></span></li>
+        <li>密&nbsp;&nbsp;&nbsp;码：<input id="txtPassword" name="password" type="password" maxlength="12" size="20" onblur="blurPwd(this.value);" />
+            <span id="checkPwd"></span></li>
+        <li>确认密码：<input id="pwdOk" name="password" type="password" size="20" onblur="blurPwdOk(this.value)" />
+            <span id="checkOk"></span></li>
+        <li>
+            <input id="Button1" type="button" value="注册" onclick="validateRegister()" />
+            <input id="Button2" type="button" value="登录" onclick="javascript:window.location.href(denglu.html)" /></li>
+    </ul>
+</div>
+</body>
