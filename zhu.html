@@ -121,22 +121,22 @@
     </div>
     <script>
       //批量删除
- function delAllProduct(){
- if(!confirm("确定要删除这些图书吗？")){
- return ;
- }
- var cks=document.getElementsByName("check");
- var str="";
- //拼接所有的图书id
- for(var i=0;i<cks.length;i++){
- if(cks[i].checked){
- str+="id="+cks[i].value+"&";
- }
- }
- //去掉字符串末尾的‘&'
- str=str.substring(0, str.length-1);
- location.href="${pageContext.request.contextPath}/servlet/delAllBooksServlet?" rel="external nofollow" +str;
- }
+      function delAllProduct(){
+      if(!confirm("确定要删除这些图书吗？")){
+      return ;
+      }
+      var cks=document.getElementsByName("check");
+      var str="";
+      //拼接所有的图书id
+      for(var i=0;i<cks.length;i++){
+      if(cks[i].checked){
+      str+="id="+cks[i].value+"&";
+      }
+      }
+      //去掉字符串末尾的‘&'
+      str=str.substring(0, str.length-1);
+      location.href="${pageContext.request.contextPath}/servlet/delAllBooksServlet?" rel="external      nofollow" +str;
+      }
     </script>
 </body>
 </html>
