@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+     <div class="header">
+        <h1>请填写你要搜索的图书</h1>
+        <input id="value1" type="text" placeholder="请输入书名">
+        <input id="value2" type="text" placeholder="请输入作者">
+        <input id="value3" type="text" placeholder="请输入出版社">
+        <button id="find">搜索</button>
+    </div>
+     <div class="all">
+        <table id="a1">
+            <tr>
+                <th>图书号</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>总库存</th>
+            </tr>
+            <tr>
+               <td style="cursor: hand; height: 22px" align="center"
+ width="23">
+ <input type="checkbox" name="check" value="${book.id}"/> 
+</td>
+                <td>
+                   <p class="number">001</p>
+                </td>
+                <td>
+                    <p class="book">人间失格</p>
+                </td>
+                <td>
+                    <p class="author">太宰治</p>
+                </td>
+                <td>
+                    <p class="press">作家出版社</p>
+                </td>
+                <td>
+                    <p class="Onumber">5</p>
+                </td>
+                <td><button class="Odelete">删除</button></td>
+            </tr>
+            <tr>
+                <td>
+                   <p class="number">002</p>
+                </td>
+                <td>
+                    <p class="book">皮囊</p>
+                </td>
+                <td>
+                    <p class="author">蔡崇达</p>
+                </td>
+                <td>
+                    <p class="press">天津人民出版社</p>
+                </td>
+                <td>
+                    <p class="Onumber">3</p>
+                </td>
+                <td><button class="Odelete">删除</button></td>
+            </tr>
+            <tr>
+                 <td>
+                   <p class="number">003</p>
+                </td>
+                <td>
+                    <p class="book">天才在左疯子在右</p>
+                </td>
+                <td>
+                    <p class="author">高铭</p>
+                </td>
+                <td>
+                    <p class="press">北京联合出版公司</p>
+                </td>
+                <td>
+                    <p class="Onumber">11</p>
+                </td>
+                <td><button class="Odelete">删除</button></td>
+            </tr>
+            <tr>
+                 <td>
+                   <p class="number">004</p>
+                </td>
+                <td>
+                    <p class="book">活着</p>
+                </td>
+                <td>
+                    <p class="author">余华</p>
+                </td>
+                <td>
+                    <p class="press">作家出版社</p>
+                </td>
+                <td>
+                    <p class="Onumber">3</p>
+                </td>
+                <td><button class="Odelete">删除</button></td>
+            </tr>
+            <tr>
+                 <td>
+                   <p class="number">005</p>
+                </td>
+                <td>
+                    <p class="book">浮生六记</p>
+                </td>
+                <td>
+                    <p class="author">沈复</p>
+                </td>
+                <td>
+                    <p class="press">中国三峡出版社</p>
+                </td>
+                <td>
+                    <p class="Onumber">8</p>
+                </td>
+                <td><button class="Odelete">删除</button></td>
+            </tr>
+        </table>
+        <!--       书库列表-->
+        <button id="add">添加</button>
+    </div>
+    <script>
+      //批量删除
+ function delAllProduct(){
+ if(!confirm("确定要删除这些图书吗？")){
+ return ;
+ }
+ var cks=document.getElementsByName("check");
+ var str="";
+ //拼接所有的图书id
+ for(var i=0;i<cks.length;i++){
+ if(cks[i].checked){
+ str+="id="+cks[i].value+"&";
+ }
+ }
+ //去掉字符串末尾的‘&'
+ str=str.substring(0, str.length-1);
+ location.href="${pageContext.request.contextPath}/servlet/delAllBooksServlet?" rel="external nofollow" +str;
+ }
+    </script>
+</body>
+</html>

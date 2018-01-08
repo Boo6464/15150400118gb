@@ -46,21 +46,6 @@
                 checkPwd.innerHTML = "密码不能为空";
                 return false;
             }else {
-                if (pwdValidate() == -1) {
-                    ruo.style.backgroundColor = "red";
-                    zhong.style.backgroundColor = "#CCC";
-                    qiang.style.backgroundColor = "#CCC";
-                }
-                else if (pwdValidate() == 0) {
-                    ruo.style.backgroundColor = "#CCC";
-                    zhong.style.backgroundColor = "red";
-                    qiang.style.backgroundColor = "#CCC";
-                }
-                else if (pwdValidate() == 1) {
-                    ruo.style.backgroundColor = "#CCC";
-                    zhong.style.backgroundColor = "#CCC";
-                    qiang.style.backgroundColor = "red";
-                }
                 checkPwd.innerHTML = "密码可用";
                 return true;
             }
