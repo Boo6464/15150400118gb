@@ -8,10 +8,8 @@
          text-align:center;
        }
     </style>
-
   </head>
- 
-  <body>
+ <body>
       
     <script type="text/javascript">
        //通过新增按钮来控制表格的显示与隐藏
@@ -47,14 +45,13 @@
           var table = document.getElementById("tableid");
          
           //将所输入的内容赋给定义的变量
-          var titleName = document.getElementById("title").value;
-          var digestName = document.getElementById("digest").value;
-          var authorName = document.getElementById("author").value;
+          var shumingName = document.getElementById("shuming").value;
+          var zuozheName = document.getElementById("zuozhe").value;
+          var chubansheName = document.getElementById("chubanshe").value;
           //获取下拉框内的内容
           var selectIndex_ = document.getElementById("select");
           var option = selectIndex_.options[selectIndex_.selectedIndex];
           var selectName = option.text;
-         
           //获取编号的内容
           var numberid = table.rows.length;
          
@@ -62,17 +59,17 @@
           var row_ = table.insertRow(table.rows.length);
  
           row_.insertCell(0).innerHTML = numberid;
-          row_.insertCell(1).innerHTML = titleName;
-          row_.insertCell(2).innerHTML = digestName;
-          row_.insertCell(3).innerHTML = authorName;
+          row_.insertCell(1).innerHTML = shumingName;
+          row_.insertCell(2).innerHTML = zuozheName;
+          row_.insertCell(3).innerHTML = chubansheName;
           row_.insertCell(4).innerHTML = selectName;
           row_.insertCell(5).innerHTML = '<input type="button" value="修改" onclick="update_(this.parentNode.parentNode)"></input>&nbsp;<input type="button" value="删除" onclick="delete_(this.parentNode.parentNode)"></input>';
          
-          document.getElementById("title").value = "";
-          document.getElementById("digest").value = "";
-          document.getElementById("author").value = "";
+          document.getElementById("shuming").value = "";
+          document.getElementById("zuozhe").value = "";
+          document.getElementById("chubanshe").value = "";
           document.getElementById("select").options[0].selected="true";
-         
+             
           var f = document.getElementById("did");
           f.style.visibility="hidden";
          
@@ -84,13 +81,13 @@
              var table = document.getElementById("tableid");
              tr = table.rows[updateRowIndex];
             
-             var p = document.getElementById("title");
+             var p = document.getElementById("shuming");
              tr.cells[1].innerHTML = p.value;
             
-             p = document.getElementById("digest");
+             p = document.getElementById("zuozhe");
              tr.cells[2].innerHTML = p.value;
             
-             p = document.getElementById("author");
+             p = document.getElementById("chubanshe");
              tr.cells[3].innerHTML = p.value;
             
              p = document.getElementById("select");
@@ -98,10 +95,11 @@
              var option = p.options[Index_];
              var selectName = option.text;
              tr.cells[4].innerHTML = selectName;
+             tr.cells[5].innerHTML = p.value;
             
-             document.getElementById("title").value = "";
-          document.getElementById("digest").value = "";
-          document.getElementById("author").value = "";
+             document.getElementById("shuming").value = "";
+          document.getElementById("zuozhe").value = "";
+          document.getElementById("chubanshe").value = "";
           document.getElementById("select").options[0].selected="true";
             
              var f = document.getElementById("did");
@@ -135,9 +133,10 @@
          updateRowIndex = row.rowIndex;
          optionFlag = "update";
          //对table里的数据进行回显
-         document.getElementById("title").value = row.cells[1].innerHTML;
-         document.getElementById("digest").value = row.cells[2].innerHTML;
-         document.getElementById("author").value = row.cells[3].innerHTML;
+         document.getElementById("shuming").value = row.cells[1].innerHTML;
+         document.getElementById("zuozhe").value = row.cells[2].innerHTML;
+         document.getElementById("chubanshe").value = row.cells[3].innerHTML;
+           
          var selectText = row.cells[4].innerHTML;
          var sel = document.getElementById("select");
          var ops = sel.options;
@@ -148,27 +147,26 @@
          }
          var f = document.getElementById("did");
          f.style.visibility="visible";
+          
        }
     </script>
     <input type="button" value="新增" onclick="show()">
     <div>
       <table border = "1" cellspacing = "0" id="tableid"  width="90%">
-         <tr bgcolor="yellow">
+         <tr bgcolor="#b8d6d8">
             <th>编号</th>
             <th>书名</th>
             <th>作者</th>
             <th>出版社</th>
-            <th>价钱</th>
-            <th>库存</th>
+            <th>类别</th>
             <th>操作</th>
          </tr>
          <tr>
-           <td>001</td>
+           <td>1</td>
             <td>人间失格</td>
             <td>太宰治</td>
             <td>作家出版社</td>
-            <td>28</td>
-            <td>5</td>
+            <td>小说</td>
             <td>
                <input type="button" value="修改" onclick="update_(this.parentNode.parentNode)">
                <input type="button" value="删除" onclick="delete_(this.parentNode.parentNode)">
@@ -182,18 +180,21 @@
          <table>
           <tr>
       <td>书名：</td>
-      <td><input type="text" id="title"></td>
-      <td>出版社：</td>
-      <td><input type="text" id="digest"></td>
+      <td><input type="text" id="shuming"></td>
+      <td>作者：</td>
+      <td><input type="text" id="zuozhe"></td>
     </tr>
   
     <tr>
+      <td>出版社：</td>
+      <td><input type="text" id="chubanshe"></td>
       <td>类别：</td>
-      <td align="left"><input type="text" id="author">
+      <td align="left">
        <select id="select">
           <option>小说</option>
           <option>文学</option>
           <option>教育</option>
+          <option>散文</option>
        </select>
       </td>
     </tr>
