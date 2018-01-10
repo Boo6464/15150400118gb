@@ -1,0 +1,43 @@
+        body {
+            background: url(561dc90ed93f6.jpg);
+            background-size: cover;
+        }
+.l1{
+                margin: 0 2%;
+				background-color:#b8d6d8;
+				width:20%;
+				height:55%;
+				text-align: center;
+				line-height:51px;
+				float:left;
+				list-style-type:none;
+                font-size: 1.2vw;
+                opacity: 0.9;
+			}
+        .d1 {
+            margin: 5% auto;
+            width: 80%;
+        }
+
+        .a1{
+            width: 100%;
+            color: black;
+        }
+        .table1 {
+            border-collapse:collapse;
+            margin: 3% 8%;
+            border:1px solid grey; 
+            width: 80%;
+            text-align: center;
+        }
+        .table1 th {
+            border:1px solid grey; 
+            font-size: 1.5vw;
+        }
+        .table1 td{
+            border:1px solid grey; 
+        }
+        .findout {
+            color:lightblue;
+            background-color: lightgoldenrodyellow;
+        }
