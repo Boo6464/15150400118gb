@@ -90,12 +90,12 @@
              p = document.getElementById("chubanshe");
              tr.cells[3].innerHTML = p.value;
             
-             p = document.getElementById("select");
-             var Index_ = p.selectedIndex;
-             var option = p.options[Index_];
-             var selectName = option.text;
-             tr.cells[4].innerHTML = selectName;
-             tr.cells[5].innerHTML = p.value;
+              p = document.getElementById("select");
+             var Index_ = p.selectedIndex;
+             var option = p.options[Index_];
+             var selectName = option.text;
+             tr.cells[4].innerHTML = selectName;
+            
             
              document.getElementById("shuming").value = "";
           document.getElementById("zuozhe").value = "";
@@ -137,17 +137,16 @@
          document.getElementById("zuozhe").value = row.cells[2].innerHTML;
          document.getElementById("chubanshe").value = row.cells[3].innerHTML;
            
-         var selectText = row.cells[4].innerHTML;
-         var sel = document.getElementById("select");
-         var ops = sel.options;
-         for(var i=0;i<ops.length;i++) {
-            if(selectText==ops[i].text) {
-               sel.options[i].selected = "true"; 
-            }
-         }
+          var selectText = row.cells[4].innerHTML;
+         var sel = document.getElementById("select");
+         var ops = sel.options;
+         for(var i=0;i<ops.length;i++) {
+            if(selectText==ops[i].text) {
+               sel.options[i].selected = "true"; 
+            }
+         }
          var f = document.getElementById("did");
-         f.style.visibility="visible";
-          
+         f.style.visibility="visible";  
        }
     </script>
     <input type="button" value="新增" onclick="show()">
@@ -194,12 +193,10 @@
           <option>小说</option>
           <option>文学</option>
           <option>教育</option>
-          <option>散文</option>
        </select>
       </td>
     </tr>
    </table>
-   
    <br>  
       <center>
          <input type="button" value="保存" onclick="insertRow_()">
