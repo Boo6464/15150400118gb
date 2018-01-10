@@ -3,10 +3,24 @@
   <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>图书增减</title>
-    <style type="javaScript">
+    <style>
        tr{
          text-align:center;
        }
+       body{
+            background: url(561dc90ed93f6.jpg);
+            background-size: cover;
+       }
+        #tableid{
+            border-collapse:collapse;
+            margin: 3% 8%;
+            border:1px solid grey; 
+            width: 80%;
+            text-align: center;
+        }
+        #tableid tr{
+            border:1px solid grey; 
+        }
     </style>
   </head>
  <body>
@@ -39,7 +53,6 @@
             default :
                alert("操作失败！！"); 
          }
-        
          function insertRow_$save() {
             //通过id获得要添加数据的表格
           var table = document.getElementById("tableid");
@@ -149,7 +162,7 @@
          f.style.visibility="visible";  
        }
     </script>
-    <input type="button" value="新增" onclick="show()">
+    <input type="button" value="新增" onclick="show()" style="color:lightblue;background-color: lightgoldenrodyellow;weight:35%;margin:2% 15%;height: 40px;font-size: 1.5vw;">
     <div>
       <table border = "1" cellspacing = "0" id="tableid"  width="90%">
          <tr bgcolor="#b8d6d8">
@@ -165,6 +178,50 @@
             <td>人间失格</td>
             <td>太宰治</td>
             <td>作家出版社</td>
+            <td>小说</td>
+            <td>
+               <input type="button" value="修改" onclick="update_(this.parentNode.parentNode)">
+               <input type="button" value="删除" onclick="delete_(this.parentNode.parentNode)">
+            </td>
+         </tr>
+         <tr>
+           <td>2</td>
+            <td>皮囊</td>
+            <td>蔡崇达</td>
+            <td>天津人民出版社</td>
+            <td>小说</td>
+            <td>
+               <input type="button" value="修改" onclick="update_(this.parentNode.parentNode)">
+               <input type="button" value="删除" onclick="delete_(this.parentNode.parentNode)">
+            </td>
+         </tr>
+         <tr>
+           <td>3</td>
+            <td>妖猫传</td>
+            <td>梦枕貘</td>
+            <td>北京联合有限公司</td>
+            <td>文学</td>
+            <td>
+               <input type="button" value="修改" onclick="update_(this.parentNode.parentNode)">
+               <input type="button" value="删除" onclick="delete_(this.parentNode.parentNode)">
+            </td>
+         </tr>
+         <tr>
+           <td>4</td>
+            <td>聊斋志异</td>
+            <td>蒲松龄</td>
+            <td>山东美术出版社</td>
+            <td>文学</td>
+            <td>
+               <input type="button" value="修改" onclick="update_(this.parentNode.parentNode)">
+               <input type="button" value="删除" onclick="delete_(this.parentNode.parentNode)">
+            </td>
+         </tr>
+         <tr>
+           <td>5</td>
+            <td>浮生六记</td>
+            <td>沈复</td>
+            <td>中国三峡出版社</td>
             <td>小说</td>
             <td>
                <input type="button" value="修改" onclick="update_(this.parentNode.parentNode)">

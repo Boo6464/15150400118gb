@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>图书管理系统</title>
+    <link rel="stylesheet" href="zhu.css" type="text/css">
 </head>
 <body>
-    
-     <div class="header">
-        <h1></h1>
+    <div class="d1">
         <input id="value1" type="text" placeholder="请输入书名">
         <input id="value2" type="text" placeholder="请输入作者">
         <input id="value3" type="text" placeholder="请输入出版社">
-        <button id="find">搜索</button>
+        <button id="find" onclick="search()" style="width:7%;height:30%;background-color:lightgoldenrodyellow;">搜索</button>
     </div>
-     <div class="all">
-        <table id="a1">
+    <div class="a1">
+        <table class="table1">
             <tr>
-                <th>全选</th>
                 <th>书名</th>
-                <th>作者</th>
+                <th>作者名</th>
+                <th>数量</th>
                 <th>出版社</th>
-                <th>价钱</th>
-                <th>总库存</th>
+                <th>单价</th>
             </tr>
+
             <tr>
-                <td style="cursor: hand; height: 22px" align="center" width="23">
-            <input type="checkbox" name="check" value="${book.id}"/> </td>
-                
                 <td>
                     <p class="book">人间失格</p>
                 </td>
@@ -34,19 +31,16 @@
                     <p class="author">太宰治</p>
                 </td>
                 <td>
+                    <p class="Onumber">22</p>
+                </td>
+                <td>
                     <p class="press">作家出版社</p>
                 </td>
                 <td>
-                   <p class="number">001</p>
-                </td>
-                <td>
-                    <p class="Onumber">5</p>
+                    <p class="price">30元</p>
                 </td>
             </tr>
             <tr>
-                <td style="cursor: hand; height: 22px" align="center" width="23">
-            <input type="checkbox" name="check" value="${book.id}"/> </td>
-                
                 <td>
                     <p class="book">皮囊</p>
                 </td>
@@ -54,19 +48,16 @@
                     <p class="author">蔡崇达</p>
                 </td>
                 <td>
+                    <p class="Onumber">22</p>
+                </td>
+                <td>
                     <p class="press">天津人民出版社</p>
                 </td>
                 <td>
-                   <p class="number">002</p>
-                </td>
-                <td>
-                    <p class="Onumber">3</p>
+                    <p class="price">25元</p>
                 </td>
             </tr>
             <tr>
-                 <td style="cursor: hand; height: 22px" align="center" width="23">
-            <input type="checkbox" name="check" value="${book.id}"/> </td>
-                
                 <td>
                     <p class="book">妖猫传</p>
                 </td>
@@ -74,19 +65,16 @@
                     <p class="author">梦枕貘</p>
                 </td>
                 <td>
-                    <p class="press">北京联合有限公司</p>
-                </td>
-                 <td>
-                   <p class="number">003</p>
+                    <p class="Onumber">5</p>
                 </td>
                 <td>
-                    <p class="Onumber">11</p>
+                    <p class="press">北京联合有限公司</p>
+                </td>
+                <td>
+                    <p class="price">45元</p>
                 </td>
             </tr>
             <tr>
-                 <td style="cursor: hand; height: 22px" align="center" width="23">
-            <input type="checkbox" name="check" value="${book.id}"/> </td>
-                 
                 <td>
                     <p class="book">聊斋志异</p>
                 </td>
@@ -94,40 +82,183 @@
                     <p class="author">蒲松龄</p>
                 </td>
                 <td>
+                    <p class="Onumber">8</p>
+                </td>
+                <td>
                     <p class="press">山东美术出版社</p>
                 </td>
                 <td>
-                   <p class="number">004</p>
-                </td>
-                <td>
-                    <p class="Onumber">3</p>
+                    <p class="price">78元</p>
                 </td>
             </tr>
             <tr>
-                  <td style="cursor: hand; height: 22px" align="center" width="23">
-            <input type="checkbox" name="check" value="${book.id}"/> </td>
-                 
                 <td>
-                    <p class="book">浮生六记</p>
+                    <p class="book">人间失格</p>
                 </td>
                 <td>
-                    <p class="author">沈复</p>
+                    <p class="author">太宰治</p>
                 </td>
                 <td>
-                    <p class="press">中国三峡出版社</p>
+                    <p class="Onumber">22</p>
                 </td>
                 <td>
-                   <p class="number">005</p>
+                    <p class="press">作家出版社</p>
+                </td>
+                <td>
+                    <p class="price">30元</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="book">皮囊</p>
+                </td>
+                <td>
+                    <p class="author">蔡崇达</p>
+                </td>
+                <td>
+                    <p class="Onumber">22</p>
+                </td>
+                <td>
+                    <p class="press">天津人民出版社</p>
+                </td>
+                <td>
+                    <p class="price">25元</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="book">妖猫传</p>
+                </td>
+                <td>
+                    <p class="author">梦枕貘</p>
+                </td>
+                <td>
+                    <p class="Onumber">5</p>
+                </td>
+                <td>
+                    <p class="press">北京联合有限公司</p>
+                </td>
+                <td>
+                    <p class="price">45元</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="book">聊斋志异</p>
+                </td>
+                <td>
+                    <p class="author">蒲松龄</p>
                 </td>
                 <td>
                     <p class="Onumber">8</p>
                 </td>
+                <td>
+                    <p class="press">山东美术出版社</p>
+                </td>
+                <td>
+                    <p class="price">78元</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="book">人间失格</p>
+                </td>
+                <td>
+                    <p class="author">太宰治</p>
+                </td>
+                <td>
+                    <p class="Onumber">22</p>
+                </td>
+                <td>
+                    <p class="press">作家出版社</p>
+                </td>
+                <td>
+                    <p class="price">30元</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="book">皮囊</p>
+                </td>
+                <td>
+                    <p class="author">蔡崇达</p>
+                </td>
+                <td>
+                    <p class="Onumber">22</p>
+                </td>
+                <td>
+                    <p class="press">天津人民出版社</p>
+                </td>
+                <td>
+                    <p class="price">25元</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="book">妖猫传</p>
+                </td>
+                <td>
+                    <p class="author">梦枕貘</p>
+                </td>
+                <td>
+                    <p class="Onumber">5</p>
+                </td>
+                <td>
+                    <p class="press">北京联合有限公司</p>
+                </td>
+                <td>
+                    <p class="price">45元</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="book">聊斋志异</p>
+                </td>
+                <td>
+                    <p class="author">蒲松龄</p>
+                </td>
+                <td>
+                    <p class="Onumber">8</p>
+                </td>
+                <td>
+                    <p class="press">山东美术出版社</p>
+                </td>
+                <td>
+                    <p class="price">78元</p>
+                </td>
             </tr>
         </table>
-        <!--       书库列表-->
-        <button id="add">添加</button>
-        <button class="Odelete">删除</button>
     </div>
-   
+
+    <script>
+        var find = document.getElementById('find');
+         function search()  {
+            var value1 = document.getElementById('value1');
+            var value2 = document.getElementById('value2'); 
+            var value3 = document.getElementById('value3'); 
+            var book = document.getElementsByClassName('book');     
+            var author = document.getElementsByClassName('author');
+            var chubanshe = document.getElementsByClassName('press'); 
+            //alert(book.length);
+            for (var i = 0; i < book.length; i++) {
+                if (value1.value == book[i].innerHTML) {
+                    book[i].style.color = 'red';
+                    book[i].style.backgroundColor = 'white';
+                } else if (value2.value == author[i].innerHTML) {
+                    author[i].style.color = 'red';
+                    author[i].style.backgroundColor = 'white';
+                } else if (value3.value == chubanshe[i].innerHTML) {
+                    chubanshe[i].style.color = 'red';
+                    chubanshe[i].style.backgroundColor = 'white';
+                } else {
+                    book[i].parentNode.parentNode.style.display = 'none';
+                }
+            }
+            value1.value = '';
+            value2.value = '';
+            value3.value = '';
+        } 
+    </script>
 </body>
+
 </html>
